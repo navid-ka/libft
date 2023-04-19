@@ -1,7 +1,7 @@
 static int		ft_isspace(int c)
 {
-	if ((str[i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
-		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'))
+	if ((c == ' ') || (c == '\t') || (c == '\n')
+		|| (c == '\v') || (c == '\f') || (c == '\r'))
 		return (1);
 	else
 		return (0);
