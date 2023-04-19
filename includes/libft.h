@@ -13,8 +13,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-
-int ft_strncmp(char *s1, char *s2);
+int	ft_strncmp(char *s1, char *s2, unsigned int n);
 int ft_strlen(char *str);
+int	ft_isdigit(int c);
+int	ft_isalpha(int c);
 
 #endif
