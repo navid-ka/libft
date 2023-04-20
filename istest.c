@@ -26,8 +26,8 @@ int main(void)
 	ft_ischeck(testc, &isalpha, "isalpha");
 	printf("\033[0;36m<<TEST CHECKING... \n");
 	//ISDIGIT
-	ft_ischeck(testn, &ft_isdigit, "ft_isdigit");
-	ft_ischeck(testn, &isdigit, "isdigit");
+	ft_ischeck(testnb, &ft_isdigit, "ft_isdigit");
+	ft_ischeck(testnb, &isdigit, "isdigit");
 	printf("\033[0;36m<<TEST CHECKING... \n");
 	//ISASCII
 	ft_ischeck(testn, &ft_isascii, "ft_isascii");
@@ -45,6 +45,7 @@ int main(void)
 	printf("%d\n", ft_toupper(testc));
 	// TOLOWER
 	printf("%d\n", ft_tolower(testc));
+	printf("%d\n", isalpha('A'));
 
 	return (0);
 }
