@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:20:59 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 14:12:15 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/04/20 14:16:52 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*ft_strdup(char *src)
 
 	len = ft_strlen(src);
 	dup = (char *) malloc(sizeof(char) * (len + 1));
-
 	if (dup == NULL)
 	{
 		errno = ENOMEM;
@@ -35,7 +34,6 @@ char	*ft_strdup(char *src)
 		dup[i] = src[i];
 		i++;
 	}
-
 	dup[i] = '\0';
 	return (dup);
 }

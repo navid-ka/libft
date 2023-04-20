@@ -1,17 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 14:14:53 by nkeyani-          #+#    #+#             */
+/*   Updated: 2023/04/20 14:27:38 by nkeyani-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/libft.h"
 
-static int	ft_isspace(int c)
+int	ft_isprint(int c)
 {
-	if ((c == ' ') || (c == '\t') || (c == '\n')
-		|| (c == '\v') || (c == '\f') || (c == '\r'))
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);
-}
-
-int	ft_isprint(int c) {
-	if (c >= 33 && c <= 126 && !ft_isalnum(c) && !ft_isspace(c))
-		return 1;
-	else
-		return 0;
 }
