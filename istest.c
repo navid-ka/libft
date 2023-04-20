@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <unistd.h>
-#include "includes/libft.h"
+#include <libft.h>
 
 void ft_ischeck(int c, int(*f)(int), char *name)
 {
 	if (f(c) == 1)
-		printf("\033[0;32mTest of %s returned [√]\n", name);
+		printf("\033[0;32mTest of %s returned [√]\n\033[m", name);
 	else
-		printf("\033[0;31mTest of %s returned [X]\n", name);
+		printf("\033[0;31mTest of %s returned [X]\n\033[m", name);
 }
 
 int main(void)
