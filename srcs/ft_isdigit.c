@@ -6,13 +6,13 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:54:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 11:29:13 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/04/20 12:21:37 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);
