@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:54:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/19 17:57:34 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/04/20 11:29:13 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,4 @@ int	ft_isdigit(int c)
 		return (1);
 	else
 		return (0);
-}
-
-#include <stdio.h>
-
-int main(void)
-{
-	printf("%d", ft_isalpha(2));
 }
