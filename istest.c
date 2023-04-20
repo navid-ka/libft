@@ -19,7 +19,7 @@ int main(void)
 
 	testnb = 9;
 	testn = '9';
-	testc = '!';
+	testc = 'a';
     printf("\033[0;36m<<TEST CHECKING... \n");
 	// ISALPHA
 	ft_ischeck(testc, &ft_isalpha, "ft_isalpha");
@@ -36,10 +36,6 @@ int main(void)
 	//ISALNUM
 	ft_ischeck(testnb, &ft_isalnum, "ft_isalnum");
 	ft_ischeck(testnb, &isalnum, "isalnum");
-	printf("\033[0;36m<<TEST CHECKING... \n");
-	//ISASCII
-	ft_ischeck(testc, &ft_isprint, "ft_isprint");
-	ft_ischeck(testc, &isprint, "isprint");
 	printf("\033[0;36m<<TEST CHECKING... \n");
 	//ISPRINT
 	ft_ischeck(testc, &ft_isprint, "ft_isprint");
