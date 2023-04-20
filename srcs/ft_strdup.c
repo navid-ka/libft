@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 17:23:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 14:13:05 by nkeyani-         ###   ########.fr       */
+/*   Created: 2023/04/14 11:20:59 by nkeyani-          #+#    #+#             */
+/*   Updated: 2023/04/20 14:12:15 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdlib.h>
+#include <errno.h>
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n);
-int		ft_strlen(char *str);
-int		ft_isdigit(int c);
-int		ft_isalpha(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_atoi(char *str);
-char	*ft_strdup(char *src);
+int	ft_strlen(char *str);
 
-#endif
+char	*ft_strdup(char *src)
+{
+	int		len;
+	int		i;
+	char	*dup;
+
+	len = ft_strlen(src);
+	dup = (char *) malloc(sizeof(char) * (len + 1));
+
+	if (dup == NULL)
+	{
+		errno = ENOMEM;
+		return (NULL);
+	}
+	i = 0;
+	while (src[i])
+	{
+		dup[i] = src[i];
+		i++;
+	}
+
+	dup[i] = '\0';
+	return (dup);
+}
