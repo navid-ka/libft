@@ -1,7 +1,8 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 OBJECTS = srcs/ft_strlen.o srcs/ft_strncmp.o srcs/ft_isalpha.o \
-ft_isdigit.o
+srcs/ft_isdigit.o srcs/ft_isalnum.o srcs/ft_isascii.o srcs/ft_isprint.o
+
 
 ${NAME}: ${OBJECTS}
 	ar rc ${NAME} ${OBJECTS}
