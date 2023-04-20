@@ -20,7 +20,7 @@ int main(void)
 	testnb = 9;
 	testn = '9';
 	testc = 'a';
-    printf("\033[0;36m<<TEST CHECKING... \n");
+	printf("\033[0;36m<<TEST CHECKING... \n");
 	// ISALPHA
 	ft_ischeck(testc, &ft_isalpha, "ft_isalpha");
 	ft_ischeck(testc, &isalpha, "isalpha");
@@ -40,6 +40,11 @@ int main(void)
 	//ISPRINT
 	ft_ischeck(testc, &ft_isprint, "ft_isprint");
 	ft_ischeck(testc, &isprint, "isprint");
+	printf("\033[0;36m<<TEST CHECKING... \n");
+	// TOUPPER
+	printf("%d\n", ft_toupper(testc));
+	// TOLOWER
+	printf("%d\n", ft_tolower(testc));
 
 	return (0);
 }
