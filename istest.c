@@ -5,7 +5,7 @@
 
 void ft_ischeck(int c, int(*f)(int), char *name)
 {
-	if (f(c) == 1)
+	if (f(c))
 		printf("\033[0;32mTest of %s returned [√]\n\033[m", name);
 	else
 		printf("\033[0;31mTest of %s returned [X]\n\033[m", name);
@@ -45,7 +45,7 @@ int main(void)
 	printf("%d\n", ft_toupper(testc));
 	// TOLOWER
 	printf("%d\n", ft_tolower(testc));
-	printf("%d\n", isalpha('A'));
+	printf("%d\n", isalpha(testc));
 
 	return (0);
 }
