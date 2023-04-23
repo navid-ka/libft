@@ -13,15 +13,15 @@
 #include <stdlib.h>
 #include <errno.h>
 
-int	ft_strlen(char *str);
+size_t	ft_strlen(const char *s);
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *s)
 {
-	int		len;
+	size_t	len;
 	int		i;
 	char	*dup;
 
-	len = ft_strlen(src);
+	len = ft_strlen(s);
 	dup = (char *) malloc(sizeof(char) * (len + 1));
 	if (dup == NULL)
 	{
@@ -29,9 +29,9 @@ char	*ft_strdup(char *src)
 		return (NULL);
 	}
 	i = 0;
-	while (src[i])
+	while (s[i])
 	{
-		dup[i] = src[i];
+		dup[i] = s[i];
 		i++;
 	}
 	dup[i] = '\0';
