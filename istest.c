@@ -3,10 +3,10 @@
 #include <unistd.h>
 #include <libft.h>
 
-void ft_ischeck(int c, int(*f)(int), char *name)
+void ft_ischeck(int c, int(*f)(int), int(*f2)(int), char *name, char *name2)
 {
-	if (f(c))
-		printf("\033[0;32mTest of %s returned [√]\n\033[m", name);
+	if (f(c) == f2(c))
+		printf("\033[0;32mTest passed of %s is equal to %s [√]\n\033[m", name, name2);
 	else
 		printf("\033[0;31mTest of %s returned [X]\n\033[m", name);
 }
@@ -21,31 +21,27 @@ int main(void)
 	testn = '9';
 	testc = 'a';
 	printf("\033[0;36m<<TEST CHECKING... \n");
-	// ISALPHA
-	ft_ischeck(testc, &ft_isalpha, "ft_isalpha");
-	ft_ischeck(testc, &isalpha, "isalpha");
+	// ISALPHA returns non-zero value if true mine returns true isalpha returns 1024
+	ft_ischeck(testc, &ft_isalpha, &isalpha, "ft_isalpha", "isalpha");
 	printf("\033[0;36m<<TEST CHECKING... \n");
 	//ISDIGIT
-	ft_ischeck(testnb, &ft_isdigit, "ft_isdigit");
-	ft_ischeck(testnb, &isdigit, "isdigit");
+	ft_ischeck(testnb, &ft_isdigit, &isdigit,  "ft_isdigit", "isdigit");
 	printf("\033[0;36m<<TEST CHECKING... \n");
 	//ISASCII
-	ft_ischeck(testn, &ft_isascii, "ft_isascii");
-	ft_ischeck(testn, &isascii, "isascii");
+	ft_ischeck(testn, &ft_isascii, &isascii, "ft_isascii", "isascii");
 	printf("\033[0;36m<<TEST CHECKING... \n");
 	//ISALNUM
-	ft_ischeck(testnb, &ft_isalnum, "ft_isalnum");
-	ft_ischeck(testnb, &isalnum, "isalnum");
+	ft_ischeck(testnb, &ft_isalnum, &isalnum, "ft_isalnum", "isalnum");
 	printf("\033[0;36m<<TEST CHECKING... \n");
-	//ISPRINT
-	ft_ischeck(testc, &ft_isprint, "ft_isprint");
-	ft_ischeck(testc, &isprint, "isprint");
+	//ISPRINT returns non-zero value if true mine returns 1 the isprint number 16384
+	ft_ischeck(testc, &ft_isprint, &isprint, "ft_isprint", "isprint");
 	printf("\033[0;36m<<TEST CHECKING... \n");
 	// TOUPPER
-	printf("%d\n", ft_toupper(testc));
+	ft_ischeck(testc, &ft_toupper, &toupper, "ft_toupper", "toupper");
+	printf("\033[0;36m<<TEST CHECKING... \n");
 	// TOLOWER
-	printf("%d\n", ft_tolower(testc));
-	printf("%d\n", isalpha(testc));
+	ft_ischeck(testc, &ft_tolower, &tolower, "ft_tolower", "tolower");
+
 
 	return (0);
 }
