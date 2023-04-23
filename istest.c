@@ -12,7 +12,7 @@ void ft_ischeck(int c, int(*f)(int), int(*f2)(int), char *name, char *name2)
 	else
 		printf("\033[0;36m<<TEST CHECKING... \n\033[0;31mTest of %s failed [X]\n\033[m", name);
 }
-
+//ATOI
 void ft_ischeckstr(const char *str, int(*f)(const char *), int(*f2)(const char *), char *name, char *name2)
 {
     if (f(str) == f2(str))
@@ -20,6 +20,23 @@ void ft_ischeckstr(const char *str, int(*f)(const char *), int(*f2)(const char *
     else
         printf("\033[0;36m<<TEST CHECKING... \n\033[0;31mTest of %s failed [X]\n\033[m", name);
 }
+//STRLEN
+void ft_ischecksizet(const char *str, size_t(*f)(const char *), size_t(*f2)(const char *), char *name, char *name2)
+{
+    if (f(str) == f2(str))
+        printf("\033[0;36m<<TEST CHECKING... \n\033[0;32mTest passed of %s is equal to %s [√]\n\033[m", name, name2);
+    else
+        printf("\033[0;36m<<TEST CHECKING... \n\033[0;31mTest of %s failed [X]\n\033[m", name);
+}
+//STRDUP
+void ft_ischeckchr(char *str, char *(*f)(const char *), char *(*f2)(const char *), char *name, char *name2)
+{
+    if (strcmp(f(str), f2(str)) == 0)
+        printf("\033[0;36m<<TEST CHECKING... \n\033[0;32mTest passed of %s is equal to %s [√]\n\033[m", name, name2);
+    else
+        printf("\033[0;36m<<TEST CHECKING... \n\033[0;31mTest of %s failed [X]\n\033[m", name);
+}
+
 
 int main(void)
 {
@@ -47,12 +64,19 @@ int main(void)
 	// TOLOWER
 	ft_ischeck(testc, &ft_tolower, &tolower, "ft_tolower", "tolower");
 
-
 	//ATOI
 	char str[] = "12345";
     ft_ischeckstr(str, &ft_atoi, &atoi, "ft_atoi", "atoi");
+
 	//STRLEN WIP look what is t_size
-   	//ft_ischeckstr(str, &ft_strlen, &strlen, "ft_strlen", "strlen");
+   	ft_ischecksizet(str, &ft_strlen, &strlen, "ft_strlen", "strlen");
+
+	//STRDUP 
+ 	//char* testd = "a";
+    char* teststr = "Hello, world!";
+
+    ft_ischeckchr(teststr, ft_strdup, strdup, "ft_strdup", "strdup");
+    //ft_ischeckchr(testd, NULL, NULL, "NULL", "NULL");
 
 	return (0);
 }
