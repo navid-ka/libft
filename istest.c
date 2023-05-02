@@ -72,8 +72,11 @@ int main(void)
 	ft_ischeck(testc, &ft_tolower, &tolower, "ft_tolower", "tolower");
 
 	//ATOI
-	char str[] = "12345";
+	char str[] = "--12345";
 	ft_ischeckstr(str, &ft_atoi, &atoi, "ft_atoi", "atoi");
+	int a = ft_atoi(str);
+	int b = atoi(str);
+	printf("%d\n %d\n", a, b);
 
 	//STRLEN WIP look what is t_size
    	ft_ischecksizet(str, &ft_strlen, &strlen, "ft_strlen", "strlen");
