@@ -90,7 +90,8 @@ int main(void)
 	//STRCHR
 	ft_ischeckstrchr(teststr, testn, ft_strchr, strchr, "ft_strchr", "strchr");
 
-	printf("%s \n", strchr(teststr, testn));
-	printf("%s", ft_strchr(teststr, testn));
+	//STRNCMPT TODO
+	//printf("%d", ft_strncmp("test", "", 0));
+
 	return (0);
 }
