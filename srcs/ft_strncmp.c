@@ -6,9 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 13:05:15 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/19 17:21:59 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:11:07 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libft.h"
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {

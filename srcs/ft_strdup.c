@@ -6,12 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:20:59 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 14:16:52 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:11:46 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <errno.h>
+#include "../includes/libft.h"
 
 size_t	ft_strlen(const char *s);
 

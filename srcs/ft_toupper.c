@@ -6,12 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:31:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 14:47:01 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:11:25 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 static int	ft_islower(int c)
 {
