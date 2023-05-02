@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 17:54:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/02 15:10:44 by nkeyani-         ###   ########.fr       */
+/*   Created: 2023/04/20 14:15:47 by nkeyani-          #+#    #+#             */
+/*   Updated: 2023/05/02 17:31:10 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_isascii(int c)
 {
-	return (c >= '0' && c <= '9');
+	return (c >= 0 && c <= 127);
 }

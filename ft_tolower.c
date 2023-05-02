@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 14:15:47 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/02 15:10:41 by nkeyani-         ###   ########.fr       */
+/*   Created: 2023/04/20 15:23:07 by nkeyani-          #+#    #+#             */
+/*   Updated: 2023/05/02 17:29:44 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-int	ft_isascii(int c)
+static int	ft_isupper(int c)
 {
-	return (c >= 0 && c <= 127);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
+}
+
+int	ft_tolower(int c)
+{
+	if (ft_isupper(c))
+		return (c + 32);
+	else
+		return (c);
 }
