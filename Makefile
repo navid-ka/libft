@@ -1,24 +1,26 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
-OBJECTS = srcs/ft_strlen.o srcs/ft_strncmp.o srcs/ft_isalpha.o \
-srcs/ft_isdigit.o srcs/ft_isalnum.o srcs/ft_isascii.o \
-srcs/ft_isprint.o srcs/ft_toupper.o srcs/ft_tolower.o \
-srcs/ft_strchr.o srcs/ft_strrchr.o srcs/ft_atoi.o \
-srcs/ft_strdup.o
+OBJECTS = ft_strlen.o ft_strncmp.o ft_isalpha.o \
+ft_isdigit.o ft_isalnum.o ft_isascii.o \
+ft_isprint.o ft_toupper.o ft_tolower.o \
+ft_strchr.o ft_strrchr.o ft_atoi.o \
+ft_strdup.o
 
 ${NAME}: ${OBJECTS}
-	ar rc ${NAME} ${OBJECTS}
-	ranlib ${NAME}
+	@ar rc ${NAME} ${OBJECTS}
+	@ranlib ${NAME}
 
 all: ${NAME}
 
 %.o : %.c
-	gcc -c ${CFLAGS} $< -o $@
+	@printf "\rCompiling: $<"
+	@gcc -c ${CFLAGS} $< -o $@
 
 fclean: clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 clean:
-	rm -f ${OBJECTS}
+	@rm -f ${OBJECTS}
 
 re: fclean all
+.PHONY: clean all fclean re

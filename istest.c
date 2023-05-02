@@ -36,7 +36,14 @@ void ft_ischeckchr(char *str, char *(*f)(const char *), char *(*f2)(const char *
 	else
 		printf("\033[0;36m<<TEST CHECKING... \n\033[0;31mTest of %s failed [X]\n\033[m", name);
 }
-
+// strchr
+void ft_ischeckstrchr(char *str, int c, char *(*f)(const char *, int), char *(*f2)(const char *, int), char *name, char *name2)
+{
+	if (f(str, c) == f2(str, c))
+		printf("\033[0;36m<<TEST CHECKING... \n\033[0;32mTest passed of %s is equal to %s [√]\n\033[m", name, name2);
+	else
+		printf("\033[0;36m<<TEST CHECKING... \n\033[0;31mTest of %s failed [X]\n\033[m", name);
+}
 
 int main(void)
 {
@@ -48,7 +55,7 @@ int main(void)
 	testnb = 9;
 	testn = '9';
 	testc = 'a';
-
+	printf("\n");
 	// ISALPHA returns non-zero value if true mine returns true isalpha returns 1024
 	ft_ischeck(testc, &ft_isalpha, &isalpha, "ft_isalpha", "isalpha");
 	//ISDIGIT
@@ -77,6 +84,10 @@ int main(void)
 
 	ft_ischeckchr(teststr, ft_strdup, strdup, "ft_strdup", "strdup");
 
+	//STRCHR
+	ft_ischeckstrchr(teststr, testn, ft_strchr, strchr, "ft_strchr", "strchr");
 
+	printf("%s \n", strchr(teststr, testn));
+	printf("%s", ft_strchr(teststr, testn));
 	return (0);
 }

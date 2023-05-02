@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 14:31:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/02 15:11:25 by nkeyani-         ###   ########.fr       */
+/*   Created: 2023/04/20 14:14:53 by nkeyani-          #+#    #+#             */
+/*   Updated: 2023/05/02 17:29:23 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-static int	ft_islower(int c)
+int	ft_isprint(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	else
-		return (0);
-}
-
-int	ft_toupper(int c)
-{
-	if (ft_islower(c))
-		return (c - 32);
-	else
-		return (c);
+	return (c >= 32 && c <= 126);
 }

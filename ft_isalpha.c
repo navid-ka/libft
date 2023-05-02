@@ -6,11 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:30:11 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 14:45:20 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:29:12 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 // static int	ft_isupper(int c)
 // {
@@ -22,10 +22,10 @@
 
 // static int	ft_islower(int c)
 // {
-// 	if (c >= 'a' && c <= 'z')
-// 		return (1);
-// 	else
+// 	if (!(c >= 'a' && c <= 'z'))
 // 		return (0);
+// 
+// 		
 // }
 
 // int	ft_isalpha(int c)
@@ -37,5 +37,5 @@
 // }
 int	ft_isalpha(int c)
 {
-	return((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }

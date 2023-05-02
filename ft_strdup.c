@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 15:23:07 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/02 15:11:23 by nkeyani-         ###   ########.fr       */
+/*   Created: 2023/04/14 11:20:59 by nkeyani-          #+#    #+#             */
+/*   Updated: 2023/05/02 17:29:29 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-static int	ft_isupper(int c)
-{
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	else
-		return (0);
-}
+size_t	ft_strlen(const char *s);
 
-int	ft_tolower(int c)
+char	*ft_strdup(const char *s)
 {
-	if (ft_isupper(c))
-		return (c + 32);
-	else
-		return (c);
+	size_t	len;
+	int		i;
+	char	*dup;
+
+	len = ft_strlen(s);
+	dup = (char *) malloc(sizeof(char) * (len + 1));
+	if (dup == NULL)
+	{
+		errno = ENOMEM;
+		return (NULL);
+	}
+	i = 0;
+	while (s[i])
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }
