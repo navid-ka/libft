@@ -6,13 +6,16 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:23:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 15:35:44 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:11:53 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-#include <stddef.h>
+# include <stddef.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <errno.h>
 
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);

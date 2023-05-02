@@ -6,9 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:15:47 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 14:16:18 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:10:41 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libft.h"
 
 int	ft_isascii(int c)
 {

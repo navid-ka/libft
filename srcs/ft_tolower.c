@@ -6,9 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:23:07 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 15:25:02 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:11:23 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libft.h"
 
 static int	ft_isupper(int c)
 {

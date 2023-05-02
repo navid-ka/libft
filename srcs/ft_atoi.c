@@ -6,9 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 23:07:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/04/20 15:27:37 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:10:32 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libft.h"
 
 int	ft_atoi(const char *str)
 {
