@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:33:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:29:41 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/03 10:15:39 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	unsigned int	i;
-	char	*ptrs;
+	char			*ptrs;
 
 	ptrs = NULL;
 	i = 0;
