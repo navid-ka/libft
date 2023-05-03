@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:41:32 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/03 11:41:36 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:58:43 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ void	*ft_memset(void *b, int c, size_t len)
 	{
 		ptrs[i++] = (unsigned char)c;
 	}
-
 	return (ptrs);
 }
