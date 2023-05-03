@@ -5,7 +5,8 @@ OBJECTS = ft_strlen.o ft_strncmp.o ft_isalpha.o \
 ft_isdigit.o ft_isalnum.o ft_isascii.o \
 ft_isprint.o ft_toupper.o ft_tolower.o \
 ft_strchr.o ft_strrchr.o ft_atoi.o \
-ft_strdup.o ft_memset.o ft_bzero.o
+ft_strdup.o ft_memset.o ft_bzero.o \
+ft_memchr.o
 
 ${NAME}: ${OBJECTS}
 	@${LIBFLAGS} ${NAME} ${OBJECTS}
