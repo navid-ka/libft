@@ -89,7 +89,9 @@ int main(void)
 
 	//STRCHR
 	ft_ischeckstrchr(teststr, testn, ft_strchr, strchr, "ft_strchr", "strchr");
-
+	ft_ischeckstrchr(teststr, testn, ft_strrchr, strrchr, "ft_strrchr", "strrchr");
+	printf("%s\n", ft_strrchr("Hola que tal", 'a'));
+	
 	//STRNCMPT TODO
 	//printf("%d", ft_strncmp("test", "", 0));
 

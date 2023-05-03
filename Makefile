@@ -8,17 +8,18 @@ ft_isdigit.o ft_isalnum.o ft_isascii.o \
 ft_isprint.o ft_toupper.o ft_tolower.o \
 ft_strchr.o ft_strrchr.o ft_atoi.o \
 ft_strdup.o ft_memset.o ft_bzero.o \
-ft_memchr.o ft_memcpy.o ft_memcmp.o
+ft_memchr.o ft_memcpy.o ft_memcmp.o \
+ft_memmove.o ft_strlcpy.o
 
-${NAME}: ${OBJECTS} ${HEADER} #${LINK}
-	@${LIBF} ${NAME} ${OBJECTS}
+${NAME}: ${OBJECTS} ${HEADER}
+	@${LIBF} ${NAME} ${OBJECTS} 
 	@ranlib ${NAME}
 
 all: ${NAME}
 
 %.o : %.c
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
-	@gcc -c ${CFLAGS} $< -o $@
+	@gcc -c ${CFLAGS} $< -o $@ 
 
 fclean: clean
 	@echo "UwU"
