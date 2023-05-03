@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:23:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:27:30 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/03 10:14:54 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <errno.h>
 
 size_t	ft_strlen(const char *s);
-void    *ft_memset(void *s, int c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *s);
-int     ft_strncmp(char *s1, char *s2, size_t n);
+int		ft_strncmp(char *s1, char *s2, size_t n);
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
