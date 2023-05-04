@@ -1,6 +1,5 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
-HEADER = libft.h
 LIBF = ar rc
 #LINK = -L./ -lft libft.a -I./
 OBJECTS = ft_strlen.o ft_strncmp.o ft_isalpha.o \
@@ -11,18 +10,18 @@ ft_strdup.o ft_memset.o ft_bzero.o \
 ft_memchr.o ft_memcpy.o ft_memcmp.o \
 ft_memmove.o ft_strlcpy.o
 
-${NAME}: ${OBJECTS} ${HEADER}
+%.o : %.c
+	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
+	@cc -c ${CFLAGS} $< -o $@ 
+
+${NAME}: ${OBJECTS} 
 	@${LIBF} ${NAME} ${OBJECTS} 
 	@ranlib ${NAME}
 
 all: ${NAME}
 
-%.o : %.c
-	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
-	@gcc -c ${CFLAGS} $< -o $@ 
-
 fclean: clean
-	@echo "UwU"
+	@echo "$$HEADER"
 	@rm -f ${NAME}
 
 clean:
@@ -31,3 +30,54 @@ clean:
 
 re: fclean all
 .PHONY: clean all fclean re
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define HEADER
+⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕
+⢐⢕⢕⢕⢕⢕⣕⢕⢕⠕⠁⢕⢕⢕⢕⢕⢕⢕⢕⠅⡄⢕⢕⢕⢕⢕⢕⢕⢕⢕
+⢕⢕⢕⢕⢕⠅⢗⢕⠕⣠⠄⣗⢕⢕⠕⢕⢕⢕⠕⢠⣿⠐⢕⢕⢕⠑⢕⢕⠵⢕
+⢕⢕⢕⢕⠁⢜⠕⢁⣴⣿⡇⢓⢕⢵⢐⢕⢕⠕⢁⣾⢿⣧⠑⢕⢕⠄⢑⢕⠅⢕
+⢕⢕⠵⢁⠔⢁⣤⣤⣶⣶⣶⡐⣕⢽⠐⢕⠕⣡⣾⣶⣶⣶⣤⡁⢓⢕⠄⢑⢅⢑
+⠍⣧⠄⣶⣾⣿⣿⣿⣿⣿⣿⣷⣔⢕⢄⢡⣾⣿⣿⣿⣿⣿⣿⣿⣦⡑⢕⢤⠱⢐
+⢠⢕⠅⣾⣿⠋⢿⣿⣿⣿⠉⣿⣿⣷⣦⣶⣽⣿⣿⠈⣿⣿⣿⣿⠏⢹⣷⣷⡅⢐
+⣔⢕⢥⢻⣿⡀⠈⠛⠛⠁⢠⣿⣿⣿⣿⣿⣿⣿⣿⡀⠈⠛⠛⠁⠄⣼⣿⣿⡇⢔
+⢕⢕⢽⢸⢟⢟⢖⢖⢤⣶⡟⢻⣿⡿⠻⣿⣿⡟⢀⣿⣦⢤⢤⢔⢞⢿⢿⣿⠁⢕
+⢕⢕⠅⣐⢕⢕⢕⢕⢕⣿⣿⡄⠛⢀⣦⠈⠛⢁⣼⣿⢗⢕⢕⢕⢕⢕⢕⡏⣘⢕
+⢕⢕⠅⢓⣕⣕⣕⣕⣵⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣷⣕⢕⢕⢕⢕⡵⢀⢕⢕
+⢑⢕⠃⡈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢃⢕⢕⢕
+⣆⢕⠄⢱⣄⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢁⢕⢕⠕⢁
+⣿⣦⡀⣿⣿⣷⣶⣬⣍⣛⣛⣛⡛⠿⠿⠿⠛⠛⢛⣛⣉⣭⣤⣂⢜⠕⢑⣡⣴⣿
+endef
+export HEADER

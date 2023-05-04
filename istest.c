@@ -95,5 +95,13 @@ int main(void)
 	//STRNCMPT TODO
 	//printf("%d", ft_strncmp("test", "", 0));
 
+	char c[500] = "elpacoesuncabron";
+	char c4[500] = "123123";
+	printf("\n\ntest memmove   %s\n ", memmove(c+3, c4, 20));
+	
+
+	printf("%s\n", ft_memmove(c+3, c4, 20));
+	return(0);
+
 	return (0);
 }
