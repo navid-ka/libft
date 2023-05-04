@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:03:08 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/03 17:34:05 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/04 15:23:25 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,23 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	(void)dst;
-	(void)src;
-	(void)len;
-	return(0);
+	unsigned char	*ptrdst;
+	unsigned char	*ptrsrc;
+
+	ptrdst = (unsigned char *)dst;
+	ptrsrc = (unsigned char *)src;
+	if (ptrdst == NULL && ptrsrc == NULL)
+		return (0);
+	if (dst > src)
+	{
+		while (len)
+		{
+			ptrdst[len - 1] = ptrsrc[len - 1];
+			len--;
+		}
+	}
+	else
+		ft_memcpy(ptrdst, ptrsrc, len);
+	return (ptrdst);
 }
+
