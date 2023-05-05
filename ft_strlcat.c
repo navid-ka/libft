@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:16:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/05 11:15:27 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/05 14:22:01 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[len_dst + i] = '\0';
 	return (len_dst + len_src);
 }
-
-
-
-
-
-
