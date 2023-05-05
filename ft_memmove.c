@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:03:08 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/04 15:23:25 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/05 14:21:46 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		ft_memcpy(ptrdst, ptrsrc, len);
 	return (ptrdst);
 }
-
