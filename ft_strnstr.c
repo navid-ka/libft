@@ -12,7 +12,7 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 	haystack = (char *)big;
 	needle = (char *)little;
 	if (!*needle)
-		return(haystack);
+		return (haystack);
 	while (haystack[i] && i < len)
 	{
 		if (haystack[i] == needle[0])
