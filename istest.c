@@ -105,7 +105,7 @@ int main(void)
 	char beee[] = "nyan !";
 
  	//printf("\nla original %lu", strlcat(((void *)0), beee, 2));
- 	printf("\n la mia%zu", ft_strlcat(((void *)0), beee, 2));
+ 	//printf("\n la mia%zu", ft_strlcat(((void *)0), beee, 2));
 
 	
 
