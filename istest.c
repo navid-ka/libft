@@ -101,7 +101,13 @@ int main(void)
 	
 
 	printf("%s\n", ft_memmove(c+3, c4, 20));
-	return(0);
+	
+	char beee[] = "nyan !";
+
+ 	//printf("\nla original %lu", strlcat(((void *)0), beee, 2));
+ 	printf("\n la mia%zu", ft_strlcat(((void *)0), beee, 2));
+
+	
 
 	return (0);
 }
