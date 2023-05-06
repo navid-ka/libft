@@ -14,17 +14,16 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len_s1;
-	size_t	len_set;
-	char	*res;
-	char	*ptrset;
+	size_t	start;
+	size_t	end;
 
-	len_s1 = ft_strlen(s1);
-	len_set = ft_strlen(set);
-	ptrset = (char *)s1;
-	res = (char *) malloc(sizeof(char) * ((len_s1 + len_set) + 1));
-	{
-		errno = ENOMEM;
+	if (!s1 || !set)
 		return (NULL);
-	}
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	return (ft_substr(s1, start, end - start));
 }
