@@ -95,19 +95,30 @@ int main(void)
 	//STRNCMPT TODO
 	//printf("%d", ft_strncmp("test", "", 0));
 
-	char c[500] = "elpacoesuncabron";
-	char c4[500] = "123123";
-	printf("\n\ntest memmove   %s\n ", memmove(c+3, c4, 20));
+	//char c[500] = "elpacoesuncabron";
+	//char c4[500] = "un";
+	//printf("\n\ntest memmove   %s\n ", memmove(c+3, c4, 20));
 	
 
-	printf("%s\n", ft_memmove(c+3, c4, 20));
+	//printf("%s\n", ft_memmove(c+3, c4, 20));
 	
-	char beee[] = "nyan !";
+
+	char c[500] = "elpacoesuncabron";
+    char c4[500] = "un";
+    char *trimmed = ft_strtrim(c, c4);
+    if (trimmed != NULL)
+    {
+        printf("%s\n", trimmed);
+        free(trimmed);
+    }
+    else
+    {
+        printf("Error: ft_strtrim returned NULL\n");
+    }
+	
 
  	//printf("\nla original %lu", strlcat(((void *)0), beee, 2));
  	//printf("\n la mia%zu", ft_strlcat(((void *)0), beee, 2));
 
-	
-
-	return (0);
+ return 0;
 }

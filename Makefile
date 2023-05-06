@@ -10,7 +10,7 @@ OBJECTS = ft_strlen.o ft_strncmp.o ft_isalpha.o \
 	ft_memchr.o ft_memcpy.o ft_memcmp.o \
 	ft_memmove.o ft_strlcpy.o ft_strlcat.o \
 	ft_strnstr.o ft_calloc.o ft_substr.o \
-	ft_strjoin.o
+	ft_strjoin.o ft_strtrim.o
 
 %.o : %.c
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
