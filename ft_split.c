@@ -11,7 +11,7 @@ static void ft_foreach(void **tab, size_t length, void(*f)(void *))
 
 static void ft_strfree(void *str)
 {
-    free(*(char **)str);
+    free((char **)str);
 }
 
 char    **ft_split(char const *s, char c)
@@ -21,17 +21,16 @@ char    **ft_split(char const *s, char c)
     size_t  slen;
 
     slen = ft_strlen(s);
-    arr = (char **)malloc((slen + 1) * sizeof(char *));
+    arr = ft_calloc((slen + 1), sizeof(char *));
     if (!arr)
         return (NULL);
     i = 0;
     while (i < slen)
     {
         arr[i] = ft_strtrim(s, &c);
-        s += ft_strlen(arr[i]);
         i++;
     }
     arr[i] = NULL;
-    ft_foreach((void **)arr, i, &ft_strfree);
+    ft_foreach((void **)arr, slen, ft_strfree);
     return (arr);
 }
