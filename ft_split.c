@@ -1,17 +1,17 @@
 #include "libft.h"
 
-static void ft_foreach(size_t *tab, size_t length, void(*f)(char *))
+static void ft_foreach(void **tab, size_t length, void(*f)(void *))
 {
     size_t i;
 
     i = 0;
     while (i < length)
-        (*f)((char*)(tab[i++]));
+        (*f)(tab[i++]);
 }
 
-static void ft_writelen(char *str)
+static void ft_strfree(void *str)
 {
-    write(1, str, ft_strlen(str));
+    free(*(char **)str);
 }
 
 char    **ft_split(char const *s, char c)
@@ -32,6 +32,6 @@ char    **ft_split(char const *s, char c)
         i++;
     }
     arr[i] = NULL;
-    ft_foreach((size_t *)arr, i, (void (*)(char *))ft_writelen);
+    ft_foreach((void **)arr, i, &ft_strfree);
     return (arr);
 }
