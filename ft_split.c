@@ -40,12 +40,14 @@ static size_t	ft_splitlen(const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
+    char    *start; 
 	size_t	i;
 	size_t	splitlen;
-    char *start; 
 
 	splitlen = ft_splitlen(s, c);
 	arr = ft_calloc((splitlen + 1), sizeof(char *));
+	if (!arr)
+		return (NULL); 
 	i = 0;
 	while (*s && i < splitlen)
 	{
