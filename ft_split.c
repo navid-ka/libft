@@ -42,21 +42,26 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 	size_t	i;
 	size_t	splitlen;
+    char *start; 
 
 	splitlen = ft_splitlen(s, c);
 	arr = ft_calloc((splitlen + 1), sizeof(char *));
-	if (!*arr)
-	{
-		arr[0] = ft_strdup("");
-		return (arr);
-	}
 	i = 0;
-	while (*s)
+	while (*s && i < splitlen)
 	{
-		arr[i] = ft_substr(s, 0, splitlen);
-		i++;
+		while (*s == c)
+			s++;
+		if (*s)
+		{
+            start = (char *)s;
+			while (*s && *s != c)
+				s++;
+			arr[i] = ft_substr(start, 0, s - start);
+			if (!arr[i])
+				return (ft_freeall(arr, i));
+			i++;
+		}
 	}
-	if (arr[i] == NULL)
-		return (ft_freeall(arr, i));
+	arr[i] = NULL;
 	return (arr);
 }
