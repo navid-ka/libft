@@ -1,36 +1,60 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/08 10:32:48 by nkeyani-          #+#    #+#             */
+/*   Updated: 2023/05/08 15:04:57 by nkeyani-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static void ft_foreach(void **tab, size_t length, void(*f)(void *))
+static char	**ft_freeall(char **tab, size_t i)
 {
-    size_t i;
-
-    i = 0;
-    while (i < length)
-        (*f)(tab[i++]);
+	while (i >= 0)
+		free(tab[i]);
+	free(tab);
+	return (NULL);
 }
 
-static void ft_strfree(void *str)
+static size_t	ft_splitlen(char *s, char c)
 {
-    free((char **)str);
+	size_t	i;
+
+	i = 0;
+	while (*s)
+	{
+		if (*s != c)
+			i++;
+		while (*s == c)
+			s++;
+	}
+	return (i);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char    **arr;
-    size_t  i;
-    size_t  slen;
+	char	**arr;
+	size_t	i;
+	size_t	splitlen;
 
-    slen = ft_strlen(s);
-    arr = ft_calloc((slen + 1), sizeof(char *));
-    if (!arr)
-        return (NULL);
-    i = 0;
-    while (i < slen)
-    {
-        arr[i] = ft_strtrim(s, &c);
-        i++;
-    }
-    arr[i] = NULL;
-    ft_foreach((void **)arr, slen, ft_strfree);
-    return (arr);
+	splitlen = ft_splitlen((char *)s, c);
+	arr = ft_calloc((splitlen + 1), sizeof(char *));
+	if (!*arr)
+	{
+		arr[0] = ft_strdup("");
+		return (arr);
+	}
+	i = 0;
+	while (*s)
+	{
+		arr[i] = ft_substr(s, 0, splitlen);
+		if (arr[i] == NULL)
+			return (ft_freeall(arr, i));
+		i++;
+	}
+	return (arr);
 }

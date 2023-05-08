@@ -72,11 +72,11 @@ int main(void)
 	ft_ischeck(testc, &ft_tolower, &tolower, "ft_tolower", "tolower");
 
 	//ATOI
-	char str[] = "--12345";
+	char str[] = "        -12345";
 	ft_ischeckstr(str, &ft_atoi, &atoi, "ft_atoi", "atoi");
 	int a = ft_atoi(str);
 	int b = atoi(str);
-	printf("%d\n %d\n", a, b);
+	printf("%d\n%d\n", a, b);
 
 	//STRLEN WIP look what is t_size
    	ft_ischecksizet(str, &ft_strlen, &strlen, "ft_strlen", "strlen");
@@ -119,6 +119,11 @@ int main(void)
 
  	//printf("\nla original %lu", strlcat(((void *)0), beee, 2));
  	//printf("\n la mia%zu", ft_strlcat(((void *)0), beee, 2));
+
+	char c42[500] = " el    paco es un cabron";
+	ft_split(c42, 65);
+	printf("%s", c42);
+	free(c42);
 
  return 0;
 }
