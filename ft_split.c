@@ -20,7 +20,7 @@ static char	**ft_freeall(char **tab, size_t i)
 	return (NULL);
 }
 
-static size_t	ft_splitlen(char *s, char c)
+static size_t	ft_splitlen(const char *s, char c)
 {
 	size_t	i;
 
@@ -43,7 +43,7 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	splitlen;
 
-	splitlen = ft_splitlen((char *)s, c);
+	splitlen = ft_splitlen(s, c);
 	arr = ft_calloc((splitlen + 1), sizeof(char *));
 	if (!*arr)
 	{
