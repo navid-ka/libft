@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:32:48 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/08 15:04:57 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:26:48 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	**ft_freeall(char **tab, size_t i)
 {
-	while (i >= 0)
+	while (i-- > 0)
 		free(tab[i]);
 	free(tab);
 	return (NULL);
@@ -27,9 +27,11 @@ static size_t	ft_splitlen(char *s, char c)
 	i = 0;
 	while (*s)
 	{
-		if (*s != c)
-			i++;
 		while (*s == c)
+			s++;
+		if (*s)
+			i++;
+		while (*s && *s != c)
 			s++;
 	}
 	return (i);
@@ -52,9 +54,9 @@ char	**ft_split(char const *s, char c)
 	while (*s)
 	{
 		arr[i] = ft_substr(s, 0, splitlen);
-		if (arr[i] == NULL)
-			return (ft_freeall(arr, i));
 		i++;
 	}
+	if (arr[i] == NULL)
+		return (ft_freeall(arr, i));
 	return (arr);
 }
