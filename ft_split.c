@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:32:48 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/08 16:26:48 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:32:38 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,24 @@ static size_t	ft_splitlen(const char *s, char c)
 	return (i);
 }
 
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
-    char    *start; 
+	char	*start;
 	size_t	i;
-	size_t	splitlen;
 
-	splitlen = ft_splitlen(s, c);
-	arr = ft_calloc((splitlen + 1), sizeof(char *));
+	arr = ft_calloc((ft_splitlen(s, c) + 1), sizeof(char *));
 	if (!arr)
-		return (NULL); 
+		return (NULL);
 	i = 0;
-	while (*s && i < splitlen)
+	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (*s)
 		{
-            start = (char *)s;
+			start = (char *)s;
 			while (*s && *s != c)
 				s++;
 			arr[i] = ft_substr(start, 0, s - start);
