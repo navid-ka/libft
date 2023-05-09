@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 23:07:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/03 10:45:27 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:47:07 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign *= -1;
+			sign = -1;
 		i++;
 		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
