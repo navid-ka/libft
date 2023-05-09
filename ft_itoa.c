@@ -6,38 +6,59 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:11:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/09 13:18:01 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:48:34 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-void	ft_putnbr(int nb)
+
+int	ft_icount(int n)
 {
-	if (nb == -2147483648)
-		write(1, "-2147483648", sizeof(long));
-	else if (nb < 0)
+	int	i;
+
+	i = 0;
+	if (n == -2147483648)
+		return (11);
+	if (n < 0)
 	{
-		ft_putchar('-');
-		nb = -nb;
-		ft_putnbr(nb);
+		i++;
+		n = -n;
 	}
-	else if (nb > 9)
+	while (n > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		i++;
+		n = n / 10;
 	}
-	else
-		ft_putchar(nb + '0');
+	i++;
+	return (i);
 }
 
-static char	*ft_tostr(int n);
-
-static char	*ft_revstr(char *str);
-*/
 char	*ft_itoa(int n)
 {
-(void) (n);
- return (0);
+	char	*arr;
+	int		count;
+	char	u;
+	int		d;
+
+	count = ft_icount(n);
+	arr = (char *)ft_calloc(count + 1, (sizeof(char)));
+	if (!arr)
+		return (NULL);
+	if (n == -2147483648)
+		return (arr = "-2147483648");
+	while (count--)
+	{
+		if (n < 0)
+		{
+			n = -n;
+			arr[0] = '-';
+		}
+		d = n / 10;
+		u = n % 10;
+		arr[count] = u + '0';
+		n = d;
+	}
+	arr[count] = '\0';
+	return (arr);
 }
 
