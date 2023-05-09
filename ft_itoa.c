@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:11:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/09 18:48:34 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/09 20:07:28 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,17 @@ int	ft_icount(int n)
 
 	i = 0;
 	if (n == -2147483648)
-		return (11);
+		return (13);
 	if (n < 0)
 	{
 		i++;
-		n = -n;
 	}
-	while (n > 9)
+	while (n >= 9)
 	{
 		i++;
 		n = n / 10;
 	}
-	i++;
-	return (i);
+	return (i + 1);
 }
 
 char	*ft_itoa(int n)
