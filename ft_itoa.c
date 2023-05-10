@@ -14,49 +14,46 @@
 
 int	ft_icount(int n)
 {
-	int	i;
+    int	i;
 
-	i = 0;
-	if (n == -2147483648)
-		return (13);
-	if (n < 0)
-	{
-		i++;
-	}
-	while (n >= 9)
-	{
-		i++;
-		n = n / 10;
-	}
-	return (i + 1);
+    i = 0;
+    if (n == -2147483648)
+        return (11);
+    if (n < 0)
+    {
+        n = -n;
+        i++;
+    }
+    while (n > 9)
+    {
+        i++;
+        n /= 10;
+    }
+    return (i + 1);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*arr;
-	int		count;
-	char	u;
-	int		d;
+    char	*arr;
+    int		count;
+    char	u;
+    int		d;
 
-	count = ft_icount(n);
-	arr = (char *)ft_calloc(count + 1, (sizeof(char)));
-	if (!arr)
-		return (NULL);
-	if (n == -2147483648)
-		return (arr = "-2147483648");
-	while (count--)
-	{
-		if (n < 0)
-		{
-			n = -n;
-			arr[0] = '-';
-		}
-		d = n / 10;
-		u = n % 10;
-		arr[count] = u + '0';
-		n = d;
-	}
-	arr[count] = '\0';
-	return (arr);
+    count = ft_icount(n);
+    arr = (char *)ft_calloc(count + 1, sizeof(char));
+    if (!arr)
+        return (NULL);
+    if (n < 0)
+    {
+        arr[0] = '-';
+        n = -n;
+    }
+    while (count-- >= 0)
+    {
+        d = n / 10;
+        u = n % 10;
+        arr[count] = u + '0';
+        n = d;
+    }
+    return (arr);
 }
-
