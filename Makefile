@@ -15,6 +15,8 @@ OBJECTS = ft_strlen.o ft_strncmp.o ft_isalpha.o \
 	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o \
 	ft_putnbr_fd.o
 
+OBJECTS_BONUS = ft_lstnew.o
+
 %.o : %.c
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
 	@cc -c ${CFLAGS} $< -o $@ 
@@ -30,7 +32,11 @@ fclean: clean
 
 clean:
 	@echo "(ノಠ益ಠ)ノ彡┻━┻"
-	@rm -f ${OBJECTS}
+	@rm -f ${OBJECTS} ${OBJECTS_BONUS} 
 
 re: fclean all
-.PHONY: clean all fclean re
+
+bonus:  ${OBJECTS_BONUS} 
+	@${LIBF} ${NAME} ${OBJECTS_BONUS} 
+	@ranlib ${NAME}
+.PHONY: clean all fclean re bonus
