@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:23:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/11 14:24:39 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/11 22:53:57 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 //bonus
 t_list 	*ft_lstnew(void *content);
+t_list 	*ft_lstlast(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 
