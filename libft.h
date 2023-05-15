@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:23:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/11 23:27:04 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/15 13:29:09 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # include <stdlib.h>
 # include <errno.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-void			*content;
-struct s_list	*next;
-}				t_list;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
@@ -57,10 +57,11 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 //bonus
-t_list 	*ft_lstnew(void *content);
-t_list 	*ft_lstlast(t_list *lst);
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 #endif
