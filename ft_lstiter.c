@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:03:36 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/15 16:04:45 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:48:07 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	
+	t_list	*node;
+
+	node = lst;
+	while (node)
+	{
+		f(node->content);
+		node = node->next;
+	}
 }
