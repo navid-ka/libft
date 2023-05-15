@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:26:16 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/15 13:46:48 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:21:38 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	node = lst;
 	del(node->content);
 	free(node->content);
-	node->next = node;
+	node->next = NULL;
 }
