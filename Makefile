@@ -17,7 +17,7 @@ OBJECTS = ft_strlen.o ft_strncmp.o ft_isalpha.o \
 
 OBJECTS_BONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o \
 	ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o \
-	ft_lstclear.o ft_lstiter.o
+	ft_lstclear.o ft_lstiter.o ft_lstmap.o
 
 %.o : %.c
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
