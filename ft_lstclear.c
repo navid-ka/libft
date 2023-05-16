@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:27:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/15 16:02:51 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:54:29 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		*lst = middleman;
 	}
 }
-
