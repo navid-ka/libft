@@ -42,4 +42,11 @@ bonus:  ${OBJECTS_BONUS}
 	@${LIBF} ${NAME} ${OBJECTS_BONUS} 
 	@ranlib ${NAME}
 
+git: fclean
+	@echo "Commit:"
+	@read MSG; \
+	git commit -am "$$MSG"
+	git push
+
+
 .PHONY: clean all fclean re bonus

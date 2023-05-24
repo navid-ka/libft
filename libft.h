@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:23:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/15 17:50:00 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:45:19 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <errno.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
@@ -56,7 +50,11 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
-//bonus
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
