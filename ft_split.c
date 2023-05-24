@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:32:48 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/10 15:11:17 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:02:05 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static size_t	ft_splitlen(const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
-	char	*start;
+	const char	*start;
 	size_t	i;
 
 	arr = ft_calloc((ft_splitlen(s, c) + 1), sizeof(char *));
@@ -53,7 +53,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s)
 		{
-			start = (char *)s;
+			start = s;
 			while (*s && *s != c)
 				s++;
 			arr[i] = ft_substr(start, 0, s - start);
