@@ -19,9 +19,9 @@ OBJECTS_BONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o \
 	ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o \
 	ft_lstclear.o ft_lstiter.o ft_lstmap.o
 
-%.o : %.c libft.h
+%.o : %.c
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
-	@cc -c ${CFLAGS} $< -o $@ -I libft.h
+	@cc -c ${CFLAGS} $< -o $@
 
 ${NAME}: ${OBJECTS} 
 	@${LIBF} ${NAME} ${OBJECTS} 
