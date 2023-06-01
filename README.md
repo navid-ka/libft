@@ -85,4 +85,8 @@ Contributions to `libft` are welcome! If you have any suggestions, improvements,
 
 ## License
 
-`libft` is released under the MIT License. See the [LICENSE](LICENSE) file for more details.
+`libft` is released under the MIT License. 
+
+## Author
+
+This `libft` library is developed and maintained by [nkeyani-](https://github.com/navid-ka/) as part of the 42 Cursus.
