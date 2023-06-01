@@ -1,27 +1,64 @@
-NAME = libft.a
+NAME = bin/libft.a
 CFLAGS = -Wall -Wextra -Werror
 LIBF = ar rc
-#LINK = -L./ -lft libft.a -I./
-OBJECTS = ft_strlen.o ft_strncmp.o ft_isalpha.o \
-	ft_isdigit.o ft_isalnum.o ft_isascii.o \
-	ft_isprint.o ft_toupper.o ft_tolower.o \
-	ft_strchr.o ft_strrchr.o ft_atoi.o \
-	ft_strdup.o ft_memset.o ft_bzero.o \
-	ft_memchr.o ft_memcpy.o ft_memcmp.o \
-	ft_memmove.o ft_strlcpy.o ft_strlcat.o \
-	ft_strnstr.o ft_calloc.o ft_substr.o \
-	ft_strjoin.o ft_strtrim.o ft_split.o \
-	ft_itoa.o ft_strmapi.o ft_striteri.o \
-	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o \
-	ft_putnbr_fd.o 
+SRCDIR = src
+OBJDIR = obj
 
-OBJECTS_BONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o \
-	ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o \
-	ft_lstclear.o ft_lstiter.o ft_lstmap.o
+BOOLS_SRCS = src/bools/ft_isalpha.c \
+             src/bools/ft_isdigit.c \
+             src/bools/ft_isalnum.c \
+             src/bools/ft_isascii.c \
+             src/bools/ft_isprint.c
 
-%.o : %.c
+STRINGS_SRCS = src/strings/ft_strlen.c \
+               src/strings/ft_strncmp.c \
+               src/strings/ft_toupper.c \
+               src/strings/ft_tolower.c \
+               src/strings/ft_strchr.c \
+               src/strings/ft_strrchr.c \
+               src/strings/ft_strdup.c \
+               src/strings/ft_strlcpy.c \
+               src/strings/ft_strlcat.c \
+               src/strings/ft_strnstr.c \
+               src/strings/ft_substr.c \
+               src/strings/ft_strjoin.c \
+               src/strings/ft_strtrim.c \
+               src/strings/ft_split.c \
+               src/strings/ft_itoa.c \
+               src/strings/ft_strmapi.c \
+               src/strings/ft_striteri.c \
+               src/strings/ft_putchar_fd.c \
+               src/strings/ft_putstr_fd.c \
+               src/strings/ft_putendl_fd.c \
+               src/strings/ft_putnbr_fd.c \
+               src/strings/ft_atoi.c
+
+MEMORY_SRCS = src/memory/ft_memset.c \
+              src/memory/ft_bzero.c \
+              src/memory/ft_memchr.c \
+              src/memory/ft_memcpy.c \
+              src/memory/ft_memcmp.c \
+              src/memory/ft_memmove.c \
+              src/memory/ft_calloc.c
+
+LIST_SRCS = src/list/ft_lstnew.c \
+            src/list/ft_lstadd_front.c \
+            src/list/ft_lstsize.c \
+            src/list/ft_lstlast.c \
+            src/list/ft_lstadd_back.c \
+            src/list/ft_lstdelone.c \
+            src/list/ft_lstclear.c \
+            src/list/ft_lstiter.c \
+            src/list/ft_lstmap.c
+
+SOURCES = $(BOOLS_SRCS) $(STRINGS_SRCS) $(MEMORY_SRCS) $(LIST_SRCS)
+
+OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
-	@cc -c ${CFLAGS} $< -o $@
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 ${NAME}: ${OBJECTS} 
 	@${LIBF} ${NAME} ${OBJECTS} 
@@ -34,13 +71,9 @@ fclean: clean
 
 clean:
 	@echo "(ノಠ益ಠ)ノ彡┻━┻"
-	@rm -f ${OBJECTS} ${OBJECTS_BONUS} 
+	@rm -rf ${OBJDIR}
 
 re: fclean all
-
-bonus:  ${OBJECTS_BONUS} 
-	@${LIBF} ${NAME} ${OBJECTS_BONUS} 
-	@ranlib ${NAME}
 
 git: fclean
 	@echo "Commit:"
@@ -48,5 +81,4 @@ git: fclean
 	git commit -am "$$MSG"
 	git push
 
-
-.PHONY: clean all fclean re bonus
+.PHONY: clean all fclean re
