@@ -1,8 +1,9 @@
-NAME = bin/libft.a
+NAME = $(BINDIR)/libft.a
 CFLAGS = -Wall -Wextra -Werror
 LIBF = ar rc
 SRCDIR = src
 OBJDIR = obj
+BINDIR = bin
 
 BOOLS_SRCS = src/bools/ft_isalpha.c \
              src/bools/ft_isdigit.c \
@@ -60,14 +61,15 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-${NAME}: ${OBJECTS} 
-	@${LIBF} ${NAME} ${OBJECTS} 
+${NAME}: ${OBJECTS}
+	@mkdir -p $(@D)
+	@${LIBF} ${NAME} ${OBJECTS}
 	@ranlib ${NAME}
 
 all: ${NAME}
 
 fclean: clean
-	@rm -f ${NAME}
+	@rm -rf ${BINDIR}
 
 clean:
 	@echo "(ノಠ益ಠ)ノ彡┻━┻"
