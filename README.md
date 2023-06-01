@@ -1,5 +1,7 @@
 # libft
 
+[![nkeyani-'s 42 Libft Score](https://badge42.vercel.app/api/v2/clhk5e8o5002608lcng1o3hww/project/3094348)](https://github.com/navid-ka/libft)
+
 `libft` is a library that contains various custom functions that are commonly used in C programming.
 
 ## Table of Contents
