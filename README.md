@@ -5,9 +5,15 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Functions](#functions)
+    - [Bool Functions](#bool-functions)
+    - [String Functions](#string-functions)
+    - [File Descriptor Functions](#file-descriptor-functions)
+    - [Memory Functions](#memory-functions)
+    - [Linked List Functions](#linked-list-functions)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Author](#author)
 
 ## Introduction
 
@@ -42,11 +48,13 @@ The `libft` library provides an assortment of utility functions, such as string 
 - `ft_itoa`: Convert an integer to a string.
 - `ft_strmapi`: Apply a function to each character of a string.
 - `ft_striteri`: Apply a function to each character of a string with its index.
+
+### File Descriptor Functions
+
 - `ft_putchar_fd`: Output a character to a file descriptor.
 - `ft_putstr_fd`: Output a string to a file descriptor.
 - `ft_putendl_fd`: Output a string followed by a newline to a file descriptor.
 - `ft_putnbr_fd`: Output an integer to a file descriptor.
-- `ft_atoi`: Convert a string to an integer.
 
 ### Memory Functions
 
@@ -85,7 +93,7 @@ Contributions to `libft` are welcome! If you have any suggestions, improvements,
 
 ## License
 
-`libft` is released under the MIT License. 
+`libft` is released under the MIT License.
 
 ## Author
 

@@ -28,11 +28,12 @@ STRINGS_SRCS = src/strings/ft_strlen.c \
                src/strings/ft_itoa.c \
                src/strings/ft_strmapi.c \
                src/strings/ft_striteri.c \
-               src/strings/ft_putchar_fd.c \
-               src/strings/ft_putstr_fd.c \
-               src/strings/ft_putendl_fd.c \
-               src/strings/ft_putnbr_fd.c \
                src/strings/ft_atoi.c
+
+OUTPUT_SRCS =  src/output/ft_putchar_fd.c \
+               src/output/ft_putstr_fd.c \
+               src/output/ft_putendl_fd.c \
+               src/output/ft_putnbr_fd.c \
 
 MEMORY_SRCS = src/memory/ft_memset.c \
               src/memory/ft_bzero.c \
@@ -52,7 +53,8 @@ LIST_SRCS = src/list/ft_lstnew.c \
             src/list/ft_lstiter.c \
             src/list/ft_lstmap.c
 
-SOURCES = $(BOOLS_SRCS) $(STRINGS_SRCS) $(MEMORY_SRCS) $(LIST_SRCS)
+SOURCES = $(BOOLS_SRCS) $(STRINGS_SRCS) $(MEMORY_SRCS) \
+            $(LIST_SRCS) $(OUTPUT_SRCS)
 
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
 
