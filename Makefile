@@ -53,12 +53,19 @@ LIST_SRCS = src/list/ft_lstnew.c \
             src/list/ft_lstiter.c \
             src/list/ft_lstmap.c
 
+PRINTF_SRCS = src/ft_printf/ft_printf.c \
+            src/ft_printf/ft_printc.c \
+            src/ft_printf/ft_prints.c \
+            src/ft_printf/ft_printp.c \
+            src/ft_printf/ft_printu.c \
+            src/ft_printf/ft_printhex.c 
+
 SOURCES = $(BOOLS_SRCS) $(STRINGS_SRCS) $(MEMORY_SRCS) \
-            $(LIST_SRCS) $(OUTPUT_SRCS)
+            $(LIST_SRCS) $(OUTPUT_SRCS) $(PRINTF_SRCS)
 
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
+$(OBJDIR)/%.o: $(SRCDIR)/%.c include/libft.h
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c $< -o $@

@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:23:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/15 17:50:00 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/06/08 16:43:21 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <errno.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -56,7 +57,6 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
-//bonus
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
@@ -66,5 +66,12 @@ int		ft_lstsize(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+int		ft_printc(char c);
+int		ft_prints(char *s);
+int		ft_printp(unsigned long ptr);
+int		ft_printid(int nb);
+int		ft_printu(unsigned int nb);
+int		ft_printhex(unsigned int n, char *base);
+int		ft_printf(char const *s, ...);
 
 #endif
