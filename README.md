@@ -12,7 +12,7 @@
     - [File Descriptor Functions](#file-descriptor-functions)
     - [Memory Functions](#memory-functions)
     - [Linked List Functions](#linked-list-functions)
-    - [Linked List Functions](#ft_printf)
+    - [ft_printf](#ft_printf)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
