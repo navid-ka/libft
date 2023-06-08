@@ -12,6 +12,7 @@
     - [File Descriptor Functions](#file-descriptor-functions)
     - [Memory Functions](#memory-functions)
     - [Linked List Functions](#linked-list-functions)
+    - [Linked List Functions](#ft_printf)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -79,6 +80,10 @@ The `libft` library provides an assortment of utility functions, such as string 
 - `ft_lstclear`: Delete all nodes from a list.
 - `ft_lstiter`: Apply a function to each node of a list.
 - `ft_lstmap`: Create a new list, applying a function to each node of an existing list.
+
+### ft_printf
+
+- `ft_printf`: Sends formatted output to stdout.
 
 ## Usage
 
