@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 21:37:16 by bifrost           #+#    #+#             */
-/*   Updated: 2023/06/08 16:47:00 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/06/08 16:56:08 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printc(char c)
 {
-	if (write(1, &c, 1) == -1)
+	if (write(1, &c, sizeof(char)) == -1)
 		return (-1);
 	return (1);
 }
