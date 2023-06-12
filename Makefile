@@ -58,6 +58,7 @@ PRINTF_SRCS = src/ft_printf/ft_printf.c \
             src/ft_printf/ft_prints.c \
             src/ft_printf/ft_printp.c \
             src/ft_printf/ft_printu.c \
+            src/ft_printf/ft_printid.c \
             src/ft_printf/ft_printhex.c 
 
 SOURCES = $(BOOLS_SRCS) $(STRINGS_SRCS) $(MEMORY_SRCS) \
