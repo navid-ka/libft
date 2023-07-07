@@ -4,12 +4,13 @@ LIBF = ar rc
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
+DEPDIR = $(OBJDIR)/deps
 
 BOOLS_SRCS = src/bools/ft_isalpha.c \
              src/bools/ft_isdigit.c \
              src/bools/ft_isalnum.c \
              src/bools/ft_isascii.c \
-             src/bools/ft_isprint.c
+             src/bools/ft_isprint.c \
 
 STRINGS_SRCS = src/strings/ft_strlen.c \
                src/strings/ft_strncmp.c \
@@ -28,7 +29,7 @@ STRINGS_SRCS = src/strings/ft_strlen.c \
                src/strings/ft_itoa.c \
                src/strings/ft_strmapi.c \
                src/strings/ft_striteri.c \
-               src/strings/ft_atoi.c
+               src/strings/ft_atoi.c \
 
 OUTPUT_SRCS =  src/output/ft_putchar_fd.c \
                src/output/ft_putstr_fd.c \
@@ -51,7 +52,7 @@ LIST_SRCS = src/list/ft_lstnew.c \
             src/list/ft_lstdelone.c \
             src/list/ft_lstclear.c \
             src/list/ft_lstiter.c \
-            src/list/ft_lstmap.c
+            src/list/ft_lstmap.c \
 
 PRINTF_SRCS = src/ft_printf/ft_printf.c \
             src/ft_printf/ft_printc.c \
@@ -59,22 +60,26 @@ PRINTF_SRCS = src/ft_printf/ft_printf.c \
             src/ft_printf/ft_printp.c \
             src/ft_printf/ft_printu.c \
             src/ft_printf/ft_printid.c \
-            src/ft_printf/ft_printhex.c 
+            src/ft_printf/ft_printhex.c \
 
 SOURCES = $(BOOLS_SRCS) $(STRINGS_SRCS) $(MEMORY_SRCS) \
             $(LIST_SRCS) $(OUTPUT_SRCS) $(PRINTF_SRCS)
 
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
 
+DEPS = $(patsubst $(OBJDIR)/%.o,$(DEPDIR)/%.d,$(SOURCES))
+
 $(OBJDIR)/%.o: $(SRCDIR)/%.c include/libft.h
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
 	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
 
 ${NAME}: ${OBJECTS}
 	@mkdir -p $(@D)
 	@${LIBF} ${NAME} ${OBJECTS}
 	@ranlib ${NAME}
+
+-include 
 
 all: ${NAME}
 
