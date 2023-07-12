@@ -4,7 +4,6 @@ LIBF = ar rc
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
-DEPDIR = $(OBJDIR)/deps
 
 BOOLS_SRCS = src/bools/ft_isalpha.c \
              src/bools/ft_isdigit.c \
@@ -67,7 +66,7 @@ SOURCES = $(BOOLS_SRCS) $(STRINGS_SRCS) $(MEMORY_SRCS) \
 
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
 
-DEPS = $(patsubst $(OBJDIR)/%.o,$(DEPDIR)/%.d,$(SOURCES))
+DEPS = $(patsubst $(OBJDIR)/%.o,$(DEPDIR)/%.d,$(OBJECTS))
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c include/libft.h
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
@@ -79,7 +78,7 @@ ${NAME}: ${OBJECTS}
 	@${LIBF} ${NAME} ${OBJECTS}
 	@ranlib ${NAME}
 
--include 
+-include $(DEPS)
 
 all: ${NAME}
 
