@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:23:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/06/08 16:43:21 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:54:12 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ int		ft_printid(int nb);
 int		ft_printu(unsigned int nb);
 int		ft_printhex(unsigned int n, char *base);
 int		ft_printf(char const *s, ...);
+char	*get_next_line(int fd);
 
 #endif

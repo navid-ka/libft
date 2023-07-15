@@ -61,8 +61,12 @@ PRINTF_SRCS = src/ft_printf/ft_printf.c \
             src/ft_printf/ft_printid.c \
             src/ft_printf/ft_printhex.c \
 
+GNL_SRCS = src/gnl/get_next_line_utils.c \
+           src/gnl/get_next_line.c 
+
 SOURCES = $(BOOLS_SRCS) $(STRINGS_SRCS) $(MEMORY_SRCS) \
-            $(LIST_SRCS) $(OUTPUT_SRCS) $(PRINTF_SRCS)
+            $(LIST_SRCS) $(OUTPUT_SRCS) $(PRINTF_SRCS) \
+            $(GNL_SRCS)
 
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
 
