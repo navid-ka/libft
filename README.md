@@ -88,7 +88,7 @@ The `libft` library provides an assortment of utility functions, such as string 
 
 ### get_next_line
 
-- `get_next_line`: Reads a line until "\n".
+- `get_next_line`: Reads a file line by line until "\n".
 
 ## Usage
 
