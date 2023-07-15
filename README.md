@@ -13,6 +13,7 @@
     - [Memory Functions](#memory-functions)
     - [Linked List Functions](#linked-list-functions)
     - [ft_printf](#ft_printf)
+    - [get_next_line](#get_next_line)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -84,6 +85,10 @@ The `libft` library provides an assortment of utility functions, such as string 
 ### ft_printf
 
 - `ft_printf`: Sends formatted output to stdout.
+
+### get_next_line
+
+- `get_next_line`: Reads a line until "\n".
 
 ## Usage
 
