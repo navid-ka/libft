@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:32:48 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/15 22:56:20 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 23:00:51 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static size_t	ft_splitlen(const char *s, char c)
 	return (i);
 }
 
-static char	**is_present(char const *s, char c)
+/*static char	**is_present(char const *s, char c)
 {
 	char	**arr;
 
@@ -53,7 +53,7 @@ static char	**is_present(char const *s, char c)
 		return (arr);
 	}
 	return (NULL);
-}
+}*/
 
 char	**ft_split(char const *s, char c)
 {
@@ -61,7 +61,7 @@ char	**ft_split(char const *s, char c)
 	char	*start;
 	size_t	i;
 
-	is_present(s, c);
+	//is_present(s, c);
 	arr = ft_calloc((ft_splitlen(s, c) + 1), sizeof(char *));
 	if (!arr)
 		return (NULL);
