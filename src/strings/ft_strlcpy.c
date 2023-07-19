@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:30:18 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/06/01 18:35:21 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/19 11:09:07 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	while (ptrsrc[i] && i < dstsize -1)
 	{
-			ptrdest[i] = ptrsrc[i];
-			i++;
+		ptrdest[i] = ptrsrc[i];
+		i++;
 	}
 	ptrdest[i] = '\0';
 	return (len);
