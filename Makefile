@@ -72,12 +72,12 @@ OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
 
 DEPS = $(patsubst $(OBJDIR)/%.o,$(DEPDIR)/%.d,$(OBJECTS))
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c include/libft.h
+$(OBJDIR)/%.o: $(SRCDIR)/%.c include/libft.h Makefile
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
 
-${NAME}: ${OBJECTS}
+${NAME}: ${OBJECTS} 
 	@mkdir -p $(@D)
 	@${LIBF} ${NAME} ${OBJECTS}
 	@ranlib ${NAME}
