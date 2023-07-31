@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:06:25 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/31 15:04:41 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/31 15:22:52 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*res;
 	char	*ptrs1;
 
-	if (!s1 || !s2)
-		return (NULL);
 	if (!(ft_strlen(s1)) && !(ft_strlen(s2)))
 		return (ft_strdup(""));
 	ptrs1 = (char *)s1;
