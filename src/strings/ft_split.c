@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:32:48 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/15 23:02:31 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/31 15:10:02 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	**ft_split(char const *s, char c)
 	char	*start;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	arr = ft_calloc((ft_splitlen(s, c) + 1), sizeof(char *));
 	if (!arr)
 		return (NULL);
@@ -56,12 +58,10 @@ char	**ft_split(char const *s, char c)
 			start = (char *)s;
 			while (*s && *s != c)
 				s++;
-			arr[i] = ft_substr(start, 0, s - start);
-			if (!arr[i])
-				return (ft_freeall(arr, i));
-			i++;
+			arr[i++] = ft_substr(start, 0, s - start);
+			if (!arr[i - 1])
+				return (ft_freeall(arr, i - 1));
 		}
 	}
-	arr[i] = NULL;
 	return (arr);
 }
