@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:03:08 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/06/01 18:34:05 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/31 15:05:40 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	ptrdst = (unsigned char *)dst;
 	ptrsrc = (unsigned char *)src;
-	if (ptrdst == NULL && ptrsrc == NULL)
+	if (ptrdst == NULL || ptrsrc == NULL)
 		return (0);
 	if (dst > src)
 	{

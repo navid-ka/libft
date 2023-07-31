@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:16:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/06/01 18:35:18 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/31 15:05:07 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	len_src;
 	size_t	i;
 
+	if (!dst || !src)
+		return (0);
 	if (dstsize == 0)
 		return (ft_strlen(src));
 	len_dst = ft_strlen(dst);
