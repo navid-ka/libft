@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:32:48 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/02 16:16:13 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:17:32 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 
 	arr = NULL;
-	ft_split_aux(arr, s, c);
+	arr = ft_split_aux(arr, s, c);
 	i = 0;
 	while (*s)
 	{
