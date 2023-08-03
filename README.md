@@ -36,7 +36,8 @@ The `libft` library provides an assortment of utility functions, such as string 
 ### String Functions
 
 - `ft_strlen`: Calculate the length of a string.
-- `ft_strncmp`: Compare two strings up to a specified number of characters.
+- `ft_strcmp`: Compare two strings up to a specified number of characters.
+- `ft_strncmp`: Compare two strings up to a specified number of characters by given bytes.
 - `ft_toupper`: Convert a character to uppercase.
 - `ft_tolower`: Convert a character to lowercase.
 - `ft_strchr`: Locate the first occurrence of a character in a string.

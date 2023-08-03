@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:23:45 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/15 13:54:12 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:41:13 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 char	**ft_split(char const *s, char c);
 int		ft_strncmp(char *s1, char *s2, size_t n);
+int		ft_strcmp(char *s1, char *s2);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);

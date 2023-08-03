@@ -13,6 +13,7 @@ BOOLS_SRCS = src/bools/ft_isalpha.c \
 
 STRINGS_SRCS = src/strings/ft_strlen.c \
                src/strings/ft_strncmp.c \
+               src/strings/ft_strcmp.c \
                src/strings/ft_toupper.c \
                src/strings/ft_tolower.c \
                src/strings/ft_strchr.c \
