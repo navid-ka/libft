@@ -3,6 +3,7 @@ CFLAGS = -Wall -Wextra -Werror
 LIBF = ar rc
 SRCDIR = src
 OBJDIR = obj
+DEPDIR = dep
 BINDIR = bin
 
 BOOLS_SRCS = src/bools/ft_isalpha.c \
@@ -73,10 +74,13 @@ OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
 
 DEPS = $(patsubst $(OBJDIR)/%.o,$(DEPDIR)/%.d,$(OBJECTS))
 
+all: ${NAME}
+
 $(OBJDIR)/%.o: $(SRCDIR)/%.c include/libft.h Makefile
 	@printf "\rCompiling (╮°-°)╮┳━┳ : $<"
 	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
+	@mkdir -p $(patsubst $(OBJDIR)/%,$(DEPDIR)/%,$(@D))
+	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@ && mv $(@:%.o=%.d) $(patsubst $(OBJDIR)/%,$(DEPDIR)/%,$(@:%.o=%.d))
 
 ${NAME}: ${OBJECTS} 
 	@mkdir -p $(@D)
@@ -85,14 +89,12 @@ ${NAME}: ${OBJECTS}
 
 -include $(DEPS)
 
-all: ${NAME}
-
 fclean: clean
 	@rm -rf ${BINDIR}
 
 clean:
 	@echo "(ノಠ益ಠ)ノ彡┻━┻"
-	@rm -rf ${OBJDIR}
+	@rm -rf ${OBJDIR} $(DEPDIR)
 
 re: fclean all
 
